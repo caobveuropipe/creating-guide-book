@@ -1,0 +1,7 @@
+interface:
+  display_name: "Agents Init"
+  short_description: "Install or upgrade the Multi Agent Skills pack"
+  default_prompt: "Use $agents-init to install or upgrade the Multi Agent Skills pack in this repository from the template source."
+
+policy:
+  allow_implicit_invocation: false

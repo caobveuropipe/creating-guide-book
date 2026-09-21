@@ -1,0 +1,22 @@
+# Vùng nháp của agent — không bao giờ commit.
+# Bài học: ở một repo dùng bộ skill này, `.agents/scratch/`, `.agents/tmp/` và
+# một file secrets đã mã hoá đã trôi vào cây tài liệu và nằm đó nhiều tháng.
+scratch/
+tmp/
+backup/
+
+# Không để bí mật lọt vào cây tài liệu dưới bất kỳ dạng nào.
+*.enc
+*.key
+*.pem
+secrets*
+*secret*.csv
+*.env
+.env*
+
+# Dump dữ liệu và file nhị phân nặng không thuộc về tài liệu agent.
+*.sql.gz
+*.dump
+*.bak
+*.xlsx
+*.zip

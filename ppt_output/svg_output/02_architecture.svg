@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" lang="vi-VN" data-pptx-page-role="content">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Frame -->
+  <rect id="bg_rect_slide2" width="1280" height="720" fill="url(#bgGrad2)" data-pptx-role="background" />
+
+  <!-- Header Module -->
+  <g id="header_module" data-pptx-bounds="80 50 1120 70">
+    <text x="80" y="70" fill="#38BDF8" font-size="14" font-weight="700" font-family="Segoe UI, sans-serif" letter-spacing="1">MÔ HÌNH DỮ LIỆU CỐT LÕI</text>
+    <text x="80" y="110" fill="#FFFFFF" font-size="28" font-weight="700" font-family="Segoe UI, sans-serif">Cây Phân Cấp 6 Tầng &amp; Phân Quyền Actor</text>
+  </g>
+
+  <!-- Level 1 to 6 Cards Column (Left) -->
+  <g id="levels" data-pptx-bounds="80 145 600 330">
+    <!-- Level 1 -->
+    <rect x="80" y="145" width="600" height="70" rx="8" fill="url(#cardGrad)" stroke="#3B82F6" stroke-width="1.5" />
+    <circle cx="120" cy="180" r="18" fill="#1D4ED8" />
+    <text x="120" y="186" fill="#FFFFFF" font-size="14" font-weight="700" text-anchor="middle" font-family="Segoe UI, sans-serif">1</text>
+    <text x="155" y="175" fill="#FFFFFF" font-size="16" font-weight="700" font-family="Segoe UI, sans-serif">Cấp 1 - Khối (khoi)</text>
+    <text x="155" y="196" fill="#94A3B8" font-size="13" font-family="Segoe UI, sans-serif">Cấp cao nhất phân định phạm vi dữ liệu và bảo mật (EA, SA, VI, VA)</text>
+
+    <!-- Level 2 -->
+    <rect x="80" y="230" width="600" height="70" rx="8" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" />
+    <circle cx="120" cy="265" r="18" fill="#0284C7" />
+    <text x="120" y="271" fill="#FFFFFF" font-size="14" font-weight="700" text-anchor="middle" font-family="Segoe UI, sans-serif">2</text>
+    <text x="155" y="260" fill="#FFFFFF" font-size="16" font-weight="700" font-family="Segoe UI, sans-serif">Cấp 2 - Khối Doanh Nghiệp / Ban / Trung Tâm (bu)</text>
+    <text x="155" y="281" fill="#94A3B8" font-size="13" font-family="Segoe UI, sans-serif">Các ban điều hành, trung tâm trực thuộc khối chức năng</text>
+
+    <!-- Level 3 -->
+    <rect x="80" y="315" width="600" height="70" rx="8" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" />
+    <circle cx="120" cy="350" r="18" fill="#0D9488" />
+    <text x="120" y="356" fill="#FFFFFF" font-size="14" font-weight="700" text-anchor="middle" font-family="Segoe UI, sans-serif">3</text>
+    <text x="155" y="345" fill="#FFFFFF" font-size="16" font-weight="700" font-family="Segoe UI, sans-serif">Cấp 3 - Phòng Ban (phong_ban)</text>
+    <text x="155" y="366" fill="#94A3B8" font-size="13" font-family="Segoe UI, sans-serif">Đơn vị hạch toán nghiệp vụ, trưởng phòng quản lý trực tiếp</text>
+
+    <!-- Level 4 to 6 Summary -->
+    <rect x="80" y="400" width="600" height="70" rx="8" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" />
+    <circle cx="120" cy="435" r="18" fill="#D97706" />
+    <text x="120" y="441" fill="#FFFFFF" font-size="14" font-weight="700" text-anchor="middle" font-family="Segoe UI, sans-serif">4-6</text>
+    <text x="155" y="430" fill="#FFFFFF" font-size="16" font-weight="700" font-family="Segoe UI, sans-serif">Cấp 4-6: Bộ Phận (bo_phan) • Tổ/Team • Line Nhân Sự</text>
+    <text x="155" y="451" fill="#94A3B8" font-size="13" font-family="Segoe UI, sans-serif">Tổ nhóm trực tiếp, line sản xuất và gán việc chi tiết</text>
+  </g>
+
+  <!-- Right Column: Actors & Permission Matrix -->
+  <g id="actors" data-pptx-bounds="710 145 500 330">
+    <rect x="710" y="145" width="500" height="330" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1" />
+    <text x="740" y="185" fill="#38BDF8" font-size="18" font-weight="700" font-family="Segoe UI, sans-serif">Ma Trận Quyền Hạn (Actor Roles)</text>
+
+    <text x="740" y="230" fill="#F8FAFC" font-size="15" font-weight="700" font-family="Segoe UI, sans-serif">SuperAdmin (SA)</text>
+    <text x="740" y="252" fill="#94A3B8" font-size="13" font-family="Segoe UI, sans-serif">• Toàn quyền tạo mới, sửa tên, di chuyển nhánh (reparent).</text>
+    <text x="740" y="272" fill="#94A3B8" font-size="13" font-family="Segoe UI, sans-serif">• Kích hoạt / Ngừng kích hoạt (activate/deactivate) toàn hệ thống.</text>
+
+    <text x="740" y="315" fill="#F8FAFC" font-size="15" font-weight="700" font-family="Segoe UI, sans-serif">Executive Admin (EA)</text>
+    <text x="740" y="337" fill="#94A3B8" font-size="13" font-family="Segoe UI, sans-serif">• Quản lý các đơn vị con trong phạm vi Khối được gán.</text>
+    <text x="740" y="357" fill="#94A3B8" font-size="13" font-family="Segoe UI, sans-serif">• Bị chặn nếu tác động ra ngoài phạm vi Khối quản lý.</text>
+
+    <text x="740" y="400" fill="#F8FAFC" font-size="15" font-weight="700" font-family="Segoe UI, sans-serif">Viewer (VI) &amp; Viewer All (VA)</text>
+    <text x="740" y="422" fill="#94A3B8" font-size="13" font-family="Segoe UI, sans-serif">• Chỉ có quyền xem cấu trúc cây tổ chức và tra cứu danh mục.</text>
+  </g>
+
+  <!-- Bottom Banner: Impact Analysis -->
+  <g id="bottom_impact" data-pptx-bounds="80 500 1120 150">
+    <rect x="80" y="500" width="1120" height="150" rx="10" fill="#1E293B" stroke="#2563EB" stroke-width="1" />
+    <text x="110" y="535" fill="#60A5FA" font-size="16" font-weight="700" font-family="Segoe UI, sans-serif">VAI TRÒ TRỌNG YẾU HẠ TẦNG</text>
+    <text x="110" y="565" fill="#E2E8F0" font-size="14" font-family="Segoe UI, sans-serif">
+      Đảm bảo tính nhất quán dữ liệu cho toàn bộ quy trình: Onboarding tuyển mới • Điều chuyển công tác (Temporal Assignment)
+    </text>
+    <text x="110" y="595" fill="#E2E8F0" font-size="14" font-family="Segoe UI, sans-serif">
+      Lọc danh sách tính lương theo khối phòng ban • Chốt Snapshot biến động nhân sự định kỳ hàng tháng.
+    </text>
+  </g>
+</svg>

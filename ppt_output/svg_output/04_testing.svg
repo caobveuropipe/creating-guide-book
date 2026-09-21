@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" lang="vi-VN" data-pptx-page-role="content">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+  </defs>
+
+  <rect id="bg_rect_slide4" width="1280" height="720" fill="url(#bgGrad4)" data-pptx-role="background" />
+
+  <!-- Header -->
+  <g id="header_test" data-pptx-bounds="80 50 1120 70">
+    <text x="80" y="70" fill="#38BDF8" font-size="14" font-weight="700" font-family="Segoe UI, sans-serif" letter-spacing="1">ĐẢM BẢO CHẤT LƯỢNG &amp; AN TOÀN DỮ LIỆU</text>
+    <text x="80" y="110" fill="#FFFFFF" font-size="28" font-weight="700" font-family="Segoe UI, sans-serif">Kịch Bản Kiểm Thử &amp; Cơ Chế Bảo Vệ Cascade Guard</text>
+  </g>
+
+  <!-- Card 1: View Tree -->
+  <g id="test_tc1" data-pptx-bounds="80 150 350 230">
+    <rect x="80" y="150" width="350" height="230" rx="10" fill="#1E293B" stroke="#334155" stroke-width="1.5" />
+    <circle cx="105" cy="170" r="10" fill="#10B981" />
+    <text x="125" y="176" fill="#FFFFFF" font-size="15" font-weight="700" font-family="Segoe UI, sans-serif">TC-ORG-01: Truy Xuất Cây Đơn Vị</text>
+    
+    <text x="105" y="215" fill="#94A3B8" font-size="13" font-family="Segoe UI, sans-serif">Mục tiêu: Đảm bảo UI tải cây mượt mà.</text>
+    <text x="105" y="240" fill="#38BDF8" font-size="13" font-weight="600" font-family="Segoe UI, sans-serif">Kết quả mong đợi:</text>
+    <text x="105" y="265" fill="#E2E8F0" font-size="13" font-family="Segoe UI, sans-serif">• API /api/org-units/tree trả 200 OK.</text>
+    <text x="105" y="290" fill="#E2E8F0" font-size="13" font-family="Segoe UI, sans-serif">• Cây 6 tầng hiển thị đúng quan hệ cha - con.</text>
+    <text x="105" y="315" fill="#E2E8F0" font-size="13" font-family="Segoe UI, sans-serif">• Không xuất hiện node lặp hay gãy nhánh.</text>
+    <text x="105" y="345" fill="#10B981" font-size="12" font-weight="700" font-family="Segoe UI, sans-serif">TRẠNG THÁI: PASS (Kiểm thử tự động)</text>
+  </g>
+
+  <!-- Card 2: Create Unit -->
+  <g id="test_tc2" data-pptx-bounds="455 150 370 230">
+    <rect x="455" y="150" width="370" height="230" rx="10" fill="#1E293B" stroke="#334155" stroke-width="1.5" />
+    <circle cx="480" cy="170" r="10" fill="#10B981" />
+    <text x="500" y="176" fill="#FFFFFF" font-size="15" font-weight="700" font-family="Segoe UI, sans-serif">TC-ORG-02: Tạo Đơn Vị Mới</text>
+    
+    <text x="480" y="215" fill="#94A3B8" font-size="13" font-family="Segoe UI, sans-serif">Mục tiêu: Thêm node &amp; phân quyền EA/SA.</text>
+    <text x="480" y="240" fill="#38BDF8" font-size="13" font-weight="600" font-family="Segoe UI, sans-serif">Kết quả mong đợi:</text>
+    <text x="480" y="265" fill="#E2E8F0" font-size="13" font-family="Segoe UI, sans-serif">• POST /api/org-units trả 201 Created.</text>
+    <text x="480" y="290" fill="#E2E8F0" font-size="13" font-family="Segoe UI, sans-serif">• Node mới lập tức hiển thị dưới nhánh cha.</text>
+    <text x="480" y="315" fill="#E2E8F0" font-size="13" font-family="Segoe UI, sans-serif">• DB trigger tự sinh code, path, slug chuẩn hóa.</text>
+    <text x="480" y="345" fill="#10B981" font-size="12" font-weight="700" font-family="Segoe UI, sans-serif">TRẠNG THÁI: PASS (Kiểm thử tự động)</text>
+  </g>
+
+  <!-- Card 3: Cascade Deactivate Guard -->
+  <g id="test_tc3" data-pptx-bounds="850 150 350 230">
+    <rect x="850" y="150" width="350" height="230" rx="10" fill="#1E293B" stroke="#EF4444" stroke-width="1.5" />
+    <circle cx="875" cy="170" r="10" fill="#EF4444" />
+    <text x="895" y="176" fill="#FFFFFF" font-size="14" font-weight="700" font-family="Segoe UI, sans-serif">TC-ORG-03: Cascade Guard</text>
+    
+    <text x="875" y="215" fill="#94A3B8" font-size="13" font-family="Segoe UI, sans-serif">Mục tiêu: Chặn xóa đơn vị có nhân sự.</text>
+    <text x="875" y="240" fill="#F87171" font-size="13" font-weight="600" font-family="Segoe UI, sans-serif">Cơ chế bảo vệ nghiêm ngặt:</text>
+    <text x="875" y="265" fill="#E2E8F0" font-size="13" font-family="Segoe UI, sans-serif">• Nhân viên trực thuộc còn active:</text>
+    <text x="875" y="290" fill="#FCA5A5" font-size="13" font-family="Segoe UI, sans-serif">  -> Trả HTTP 400 DomainError.</text>
+    <text x="875" y="315" fill="#E2E8F0" font-size="13" font-family="Segoe UI, sans-serif">• UI cảnh báo danh sách nhân sự.</text>
+    <text x="875" y="345" fill="#10B981" font-size="12" font-weight="700" font-family="Segoe UI, sans-serif">TRẠNG THÁI: BẢO VỆ TOÀN VẸN</text>
+  </g>
+
+  <!-- Bottom Detailed Guide / Edge Cases -->
+  <g id="edge_cases_module" data-pptx-bounds="80 415 1120 240">
+    <rect x="80" y="415" width="1120" height="240" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1" />
+    <text x="110" y="450" fill="#38BDF8" font-size="16" font-weight="700" font-family="Segoe UI, sans-serif">CÁC CA BIÊN VÀ XỬ LÝ RỦI RO KỸ THUẬT</text>
+
+    <text x="110" y="485" fill="#F8FAFC" font-size="14" font-weight="600" font-family="Segoe UI, sans-serif">1. Phòng chống vòng lặp phân cấp (Cycle Detection):</text>
+    <text x="110" y="508" fill="#94A3B8" font-size="13" font-family="Segoe UI, sans-serif">
+      Thuật toán Drizzle kiểm tra trước khi reparent đơn vị, cấm tuyệt đối việc chọn một đơn vị con làm đơn vị cha của chính nó.
+    </text>
+
+    <text x="110" y="545" fill="#F8FAFC" font-size="14" font-weight="600" font-family="Segoe UI, sans-serif">2. Đồng bộ hóa phiên bản cây (Tree Versioning Concurrency):</text>
+    <text x="110" y="568" fill="#94A3B8" font-size="13" font-family="Segoe UI, sans-serif">
+      Mỗi thao tác cập nhật đều so khớp `tree_version`. Nếu có 2 Admin cùng sửa một lúc, giao dịch sau sẽ bị từ chối để tránh ghi đè dữ liệu rác.
+    </text>
+
+    <text x="110" y="605" fill="#F8FAFC" font-size="14" font-weight="600" font-family="Segoe UI, sans-serif">3. Snapshot An Toàn Trước Khi Chốt Lương:</text>
+    <text x="110" y="628" fill="#94A3B8" font-size="13" font-family="Segoe UI, sans-serif">
+      Toàn bộ cây tổ chức được đóng băng tại thời điểm chốt kỳ tính lương, bảo đảm lịch sử phân bổ lương không bị xáo trộn khi cơ cấu thay đổi.
+    </text>
+  </g>
+</svg>
