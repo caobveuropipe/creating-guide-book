@@ -2,9 +2,12 @@
 .browser_profile/
 .test_chrome/
 
-# Output / artifacts generated during runs (tùy chọn theo nhu cầu)
-# ppt_output/
-# screenshots/
+# Output / artifacts generated during runs (sản phẩm đầu ra của dự án)
+*.pptx
+docs/
+scratch/
+HC-ADM-*
+screenshots/docnum_guide/
 
 # Node / Python cache
 __pycache__/

@@ -22,4 +22,6 @@ Lưu trữ những **quyết định quy ước** quan trọng và **lý do chi�
 
 ## Ongoing Decisions
 
-*(Sẽ được bổ sung khi có thêm quyết định chiến lược mới)*
+- **2026-09-23: Chuẩn hóa ảnh chụp hướng dẫn thao tác UI bằng cơ chế Puppeteer Action Capture (Zoom Bounding Box + Con trỏ chuột ảo).**
+  - *Lý do chiến lược:* Khắc phục nhược điểm của ảnh chụp màn hình toàn trang (Full-page / Viewport) vốn khiến các nút bấm nhỏ, dropdown và checkbox bị thu nhỏ, khó nhận diện vị trí click chuột. Bắt buộc kết hợp cặp ảnh "Toàn cảnh bối cảnh" + "Cận cảnh thao tác (Hi-DPI Retina 2x có con trỏ ảo & hiệu ứng click ripple)" để tài liệu hướng dẫn đạt chất lượng trực quan cao nhất. Tích hợp sẵn helper script tại `.agents/skills/doc-architect/scripts/puppeteer_action_capture.js`.
+

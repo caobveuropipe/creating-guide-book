@@ -1,6 +1,6 @@
 ---
 name: doc-architect
-description: Chuyên gia phân tích codebase từ đường dẫn local bất kỳ và biên soạn tài liệu kỹ thuật, hướng dẫn sử dụng, slide thuyết trình PPTX, kèm chụp ảnh màn hình giao diện (UI screenshots). Tự động lưu file tài liệu vào dự án hiện tại với quy tắc đặt tên [tên_dự_án]_[tên_luồng].md hoặc .pptx.
+description: Chuyên gia phân tích codebase từ đường dẫn local bất kỳ và biên soạn tài liệu kỹ thuật, hướng dẫn sử dụng, slide thuyết trình PPTX, kèm chụp ảnh màn hình giao diện (UI screenshots có zoom cận cảnh thao tác click chuột qua Puppeteer). Tự động lưu file tài liệu vào dự án hiện tại với quy tắc đặt tên [tên_dự_án]_[tên_luồng].md hoặc .pptx.
 ---
 
 # Doc Architect (Chuyên Gia Soạn Thảo Tài Liệu & Slide Dự Án)
@@ -25,7 +25,9 @@ Kỹ năng này biến Agent thành một **Technical Writer, System Architect &
 3. **Định dạng đầu ra hỗ trợ:**
    - **Markdown (`.md`)**: Sơ đồ Mermaid, bảng thông số API, kịch bản test UI/BE chi tiết.
    - **Slide thuyết trình PowerPoint (`.pptx`)**: Tạo file `.pptx` qua script Python (`python-pptx`) chuyên nghiệp, chia slide logic (Bối cảnh, Kiến trúc, Luồng nghiệp vụ, Kịch bản test, Rủi ro kỹ thuật).
-   - **Chụp ảnh màn hình (Screenshots)**: Sử dụng công cụ `browser_subagent` tự động mở trang web UI local (Dev server đang chạy, ví dụ `localhost:3000`, `localhost:5173`) để chụp màn hình các trang chức năng và nhúng vào tài liệu/slide.
+   - **Chụp ảnh màn hình trực quan (Screenshots)**:
+     - Tự động hóa qua `browser_subagent` hoặc script **Puppeteer Action Capture** (helper tại `.agents/skills/doc-architect/scripts/puppeteer_action_capture.js`).
+     - Bắt buộc áp dụng tiêu chuẩn chụp zoom cận cảnh (bounding box clip + con trỏ chuột ảo + ripple click) cho các bước click nút, chọn menu, điền form để người đọc thấy rõ vị trí thao tác.
 
 ---
 
@@ -43,10 +45,17 @@ Trích xuất từ yêu cầu của User:
 - `list_dir`, `grep_search`, `view_file` trên `TARGET_PATH`.
 - Đọc kiến trúc, schema database, routers, controllers, services, UI components liên quan đến luồng.
 
-### Bước 3: Chụp Ảnh Màn Hình UI (Nếu có yêu cầu hoặc server Dev đang chạy)
-- Kiểm tra xem cổng Dev UI của ứng dụng có đang chạy không (hoặc hỏi User URL trang dev, ví dụ `http://localhost:5173/admin/org-units`).
-- Sử dụng `browser_subagent` điều hướng đến trang cần kiểm thử/minh họa, chụp ảnh màn hình và lưu vào thư mục:
-  `./screenshots/[PROJECT_NAME]_[FLOW_NAME]/[step_name].png`
+### Bước 3: Chụp Ảnh Màn Hình UI & Zoom Thao Tác (Khi làm tài liệu hướng dẫn người dùng)
+- Kiểm tra xem cổng Dev UI của ứng dụng có đang chạy không (hoặc lấy URL trang dev/staging, ví dụ `http://localhost:5173/admin/org-units`).
+- **Tiêu chuẩn chụp ảnh tài liệu hướng dẫn (User Guide Visual Standard):**
+  1. **Ảnh Toàn cảnh (Overview):** Chụp bối cảnh form/trang để người dùng biết mình đang ở đâu.
+  2. **Ảnh Cận cảnh Thao tác (Action Zoom via Puppeteer):**
+     - Tuyệt đối không chỉ đưa 1 ảnh toàn trang thu nhỏ làm mất chi tiết nút bấm/icon.
+     - Sử dụng script Puppeteer (dùng helper `.agents/skills/doc-architect/scripts/puppeteer_action_capture.js`) để:
+       + Bật chế độ Retina `deviceScaleFactor: 2` cho ảnh siêu nét.
+       + Tự động inject con trỏ chuột đỏ và hiệu ứng vòng tròn click ripple tại điểm thao tác.
+       + Tự động crop `clip: { x, y, width, height }` bao quanh element + padding (40-60px).
+- Lưu ảnh vào thư mục: `./screenshots/[PROJECT_NAME]_[FLOW_NAME]/[step_name].png` hoặc `docs/images/`.
 - Nhúng đường dẫn ảnh vào Markdown: `![Mô tả ảnh](./screenshots/.../step1.png)`.
 
 ### Bước 4: Biên soạn File Tài Liệu
