@@ -7,7 +7,12 @@
 docs/
 scratch/
 HC-ADM-*
-screenshots/docnum_guide/
+HUONG_DAN_*
+Huong_Dan_*
+Module_NhanSu_*
+DANH_SACH_*
+screenshots/
+ppt_output/
 
 # Node / Python cache
 __pycache__/
