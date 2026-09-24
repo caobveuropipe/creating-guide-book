@@ -24,4 +24,9 @@ Lưu trữ những **quyết định quy ước** quan trọng và **lý do chi�
 
 - **2026-09-23: Chuẩn hóa ảnh chụp hướng dẫn thao tác UI bằng cơ chế Puppeteer Action Capture (Zoom Bounding Box + Con trỏ chuột ảo).**
   - *Lý do chiến lược:* Khắc phục nhược điểm của ảnh chụp màn hình toàn trang (Full-page / Viewport) vốn khiến các nút bấm nhỏ, dropdown và checkbox bị thu nhỏ, khó nhận diện vị trí click chuột. Bắt buộc kết hợp cặp ảnh "Toàn cảnh bối cảnh" + "Cận cảnh thao tác (Hi-DPI Retina 2x có con trỏ ảo & hiệu ứng click ripple)" để tài liệu hướng dẫn đạt chất lượng trực quan cao nhất. Tích hợp sẵn helper script tại `.agents/skills/doc-architect/scripts/puppeteer_action_capture.js`.
+- **2026-09-24: Tính toán tọa độ khung viền đỏ bằng Playwright DOM Bounding Box thay cho phỏng đoán pixel thủ công.**
+  - *Lý do chiến lược:* Tọa độ ước lượng thủ công (`w - 230`, `15px`) luôn bị lệch, chém ngang nút hoặc rơi vào khoảng đen khi thay đổi độ phân giải. Bắt buộc lấy trực tiếp `el.bounding_box()` và `container.bounding_box()` kết hợp `deviceScaleFactor` để vẽ khung bo góc chính xác từng pixel.
+- **2026-09-24: Chuẩn hóa chuỗi xuất bản tài liệu đồng bộ Markdown -> PDF -> DOCX (qua `pdf2docx`).**
+  - *Lý do chiến lược:* Sinh trực tiếp DOCX từ Markdown thô sẽ làm mất toàn bộ các khối Card Box, màu nền shading và viền màu của web CSS, đồng thời làm gãy vụn các khung viền ASCII. Việc render bản PDF chuẩn qua Chrome Headless rồi chuyển đổi trực tiếp sang DOCX qua `pdf2docx` giúp bản Word kế thừa trọn vẹn 100% đồ họa thẩm mỹ của PDF mà vẫn cho phép người dùng tự do chỉnh sửa nội dung.
+
 
